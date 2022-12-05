@@ -2,7 +2,7 @@
 node_modules
 /dist
 *.zip
-
+test
 # local env files
 .env.local
 .env.*.local
