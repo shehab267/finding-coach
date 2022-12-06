@@ -12,3 +12,6 @@ this a web app for connectting clients to coaches
 - `npm install --save vuex`
 
 - running the project `run npm serve`
+
+------------------------
+used Vuex for storing data

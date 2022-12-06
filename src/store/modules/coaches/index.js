@@ -1,0 +1,12 @@
+import mutations from "./mutations.js";
+import actions from "./actions.js";
+import getters from "./getters.js";
+
+
+export default {
+  nameSpaced: true,
+  state(){},
+  mutations,
+  actions,
+  getters
+}
