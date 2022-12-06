@@ -3,7 +3,7 @@ import actions from './actions.js';
 import getters from './getters.js';
 
 export default {
-  nameSpaced: true,
+  namespaced: true,
   state() {},
   mutations,
   actions,
