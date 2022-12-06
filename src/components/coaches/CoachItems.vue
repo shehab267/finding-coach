@@ -1,15 +1,17 @@
 <template>
-    <li>
-      <h3>{{ fullName }}</h3>
-      <h4>${{ rate }}</h4>
-      <div>
-        <span v-for="area in areas" :key="area">{{ area }}</span>
-      </div>
-      <div class="actions">
-        <router-link :to="coachContactLink">Contact</router-link>
-        <router-link :to="coachDetailsLink">Show Details</router-link>
-      </div>
-    </li>
+  <li>
+    <h3>{{ fullName }}</h3>
+    <h4>${{ rate }}</h4>
+    <div>
+      <span v-for="area in areas" :key="area">{{ area }}</span>
+    </div>
+    <div class="actions">
+      <base-button link :to="coachContactLink" mode="outline"
+        >Contact</base-button
+      >
+      <base-button link :to="coachDetailsLink">Show Details</base-button>
+    </div>
+  </li>
 </template>
 
 <script>

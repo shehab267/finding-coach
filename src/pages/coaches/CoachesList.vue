@@ -2,9 +2,9 @@
   <div>
     <section>FILTER</section>
     <base-card>
-      <div class="control">
-        <button>Refresh</button>
-        <router-link to="/register">Become a Coach</router-link>
+      <div class="controls">
+        <base-button mode="outline">Refresh</base-button>
+        <base-button link to="/register">Become a Coach</base-button>
       </div>
       <section>
         <ul v-if="hasCoaches">

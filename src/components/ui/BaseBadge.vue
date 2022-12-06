@@ -1,6 +1,19 @@
 <template>
-  <div></div>
+  <div>
+    <span class="badge" :class="type">{{ jobTitle }}</span>
+  </div>
 </template>
+
+<script>
+export default {
+  props: ['type', 'title'],
+  computed: {
+    jobTitle() {
+      return this.title.toUpperCase();
+    },
+  },
+};
+</script>
 
 <style scoped>
 .badge {
