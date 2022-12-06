@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <span class="badge" :class="type">{{ jobTitle }}</span>
-  </div>
+  <span class="badge" :class="type">{{ jobTitle }}</span>
 </template>
 
 <script>
