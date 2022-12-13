@@ -1,4 +1,3 @@
-
 export default {
   async registerCoach(context, data) {
     const userId = context.rootGetters.userId;

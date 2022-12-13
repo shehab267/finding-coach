@@ -26,5 +26,10 @@ Register page
 contact form
 
 - validation
+
   - email with a powerfull regex
-  
+
+- loading spinner 
+
+- fetching data on fire base (Coaches, requests)
+
