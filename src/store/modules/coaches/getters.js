@@ -8,6 +8,7 @@ export default {
   isCoach(_, getters, _2, rootGetters) {
     const coaches = getters.coaches;
     const userId = rootGetters.userId;
-    return coaches.some(coach => coach.id === userId);
-  }
+    // SOME is a build in method return Boolean if found at least one element
+    return coaches.some((coach) => coach.id === userId);
+  },
 };
