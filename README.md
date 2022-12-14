@@ -25,12 +25,18 @@ Register page
 
 contact form
 
-*-* validation
+_-_ validation
 
-  *-* email with a powerfull regex
+_-_ email with a powerfull regex
 
-- loading spinner 
+- loading spinner
 
-*-* fetching data on fire base (Coaches, requests)
+_-_ fetching data on fire base (Coaches, requests)
 
-*-* auto refresh every min || Clicking refresh button
+_-_ auto refresh every min || Clicking refresh button
+
+- UserAuth Form **(Pages)**
+- auth **(Store)**
+  - Signup action
+  - Login action
+- Used LocalStorage autoLogin and autoLogout
