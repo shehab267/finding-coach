@@ -55,12 +55,21 @@ export default {
         this.email === '' ||
         // !this.email.includes('@') ||
         !this.email === /^\w+((\.|-)?\w+)*@\w+((\.|-)?\w+)*(\.\w{2,9})+$/gi ||
-        this.password.length < 7
+        this.password.length < 6
       ) {
         this.formIsValid = false;
         return;
       }
-      console.log(this.email, this.password);
+
+      if (this.mode === 'login') {
+        // ...
+      }
+      //  Signup pass the email and password as expicted from the payload
+      else
+        this.$store.dispatch('signup', {
+          email: this.email,
+          password: this.password,
+        });
     },
     switchAuthMode() {
       if (this.mode === 'login') {
