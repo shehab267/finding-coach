@@ -25,11 +25,12 @@ Register page
 
 contact form
 
-- validation
+*-* validation
 
-  - email with a powerfull regex
+  *-* email with a powerfull regex
 
 - loading spinner 
 
-- fetching data on fire base (Coaches, requests)
+*-* fetching data on fire base (Coaches, requests)
 
+*-* auto refresh every min || Clicking refresh button

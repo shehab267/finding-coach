@@ -81,6 +81,7 @@ export default {
     },
     async loadCoaches() {
       this.isLoading = true;
+      
       await this.$store.dispatch('coaches/loadCoaches');
       this.isLoading = false;
     },

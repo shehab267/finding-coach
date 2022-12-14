@@ -11,4 +11,12 @@ export default {
     // SOME is a build in method return Boolean if found at least one element
     return coaches.some((coach) => coach.id === userId);
   },
+  shouldUpdate(state) {
+    const lastFetch = state.lastFetch;
+    if (!lastFetch) {
+      return true;
+    }
+    const currentTime = new Date().getTime();
+    return currentTime - lastFetch / 1000 > 60;
+  },
 };
