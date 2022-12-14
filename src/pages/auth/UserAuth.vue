@@ -9,11 +9,18 @@
         <label for="password">Password</label>
         <input type="password" id="password" v-model.trim="password" />
       </div>
-      <base-button>Login</base-button>
-      <base-button type="button" mode="flat">Signup instead</base-button>
+      <p v-if="!formIsValid">
+        Please input a valid email and password (must be at least 6 characters
+        long)
+      </p>
+      <base-button>{{ submitBtnCaption }}</base-button>
+      <base-button type="button" mode="flat" @click="switchAuthMode">{{
+        switchBtnCaption
+      }}</base-button>
     </form>
   </base-card>
 </template>
+
 <script>
 export default {
   data() {
@@ -24,6 +31,22 @@ export default {
       mode: 'login',
     };
   },
+  computed: {
+    submitBtnCaption() {
+      if (this.mode === 'login') {
+        return 'Login';
+      } else {
+        return 'Signup';
+      }
+    },
+    switchBtnCaption() {
+      if (this.mode === 'login') {
+        return 'Signup insted';
+      } else {
+        return 'Login insted';
+      }
+    },
+  },
   methods: {
     submitForm() {
       this.formIsValid = true;
@@ -31,17 +54,54 @@ export default {
       if (
         this.email === '' ||
         // !this.email.includes('@') ||
-        !this.email === /\w+@\w+.\w+$/gi ||
-        this.password === ''
+        !this.email === /^\w+((\.|-)?\w+)*@\w+((\.|-)?\w+)*(\.\w{2,9})+$/gi ||
+        this.password.length < 7
       ) {
         this.formIsValid = false;
         return;
       }
       console.log(this.email, this.password);
     },
-    switchAuthMode() {},
+    switchAuthMode() {
+      if (this.mode === 'login') {
+        this.mode = 'singup';
+      } else {
+        this.mode = 'login';
+      }
+    },
   },
 };
 </script>
 
 <style scoped>
+form {
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.form-control {
+  margin: 0.5rem 0;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+input,
+textarea {
+  display: block;
+  width: 100%;
+  font: inherit;
+  border: 1px solid #ccc;
+  padding: 0.15rem;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #3d008d;
+  background-color: #faf6ff;
+  outline: none;
+}
+</style>

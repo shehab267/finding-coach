@@ -36,6 +36,8 @@ _-_ fetching data on fire base (Coaches, requests)
 _-_ auto refresh every min || Clicking refresh button
 
 - UserAuth Form **(Pages)**
+  _-_ using a regex powerful email auth
+  
 - auth **(Store)**
   - Signup action
   - Login action
