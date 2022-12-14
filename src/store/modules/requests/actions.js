@@ -5,6 +5,7 @@ export default {
       message: payload.message,
     };
 
+    // Post requests on dataBase based on the CoachId
     const response = await fetch(
       `https://vue-demo-coaching-default-rtdb.firebaseio.com/requests/${payload.coachId}.json`,
       {
@@ -12,19 +13,23 @@ export default {
         body: JSON.stringify(newRequest),
       }
     );
+    // Next data needed for extracting and using the generating ID from fireBase with POST new request
     const responseData = await response.json();
 
-    // Catching errors
+    // convert the fireBase's id to name
+    newRequest.id = responseData.name;
+    //  Get CoachId for using locally
+    newRequest.coachId = payload.coachId;
+
     if (!response.ok) {
-      // throw error
-      const error = new Error(responseData.message || 'Failed to send data!');
+      // Throw error
+      const error = new Error(responseData.message || 'Faild to fetch data!');
       throw error;
     }
 
-    newRequest.id = responseData.name;
-    newRequest.coachId = payload.coachId;
     context.commit('addRequests', newRequest);
   },
+
   async fetchRequests(context) {
     // Load Requests for ONLY currently active users
     // Getting UserId from our global state -> getters
@@ -42,8 +47,9 @@ export default {
       throw error;
     }
 
+    //  Converting Object Json Data to array => easy to push data
     const requests = [];
-
+    //  Loop throw all Coach's requests and load them
     for (const key in responseData) {
       const request = {
         id: key,

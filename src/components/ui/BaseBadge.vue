@@ -1,20 +1,20 @@
 <template>
-  <span class="badge" :class="type">
-    {{ text }}
-  </span>
+  <div class="badge" :class="type">
+    <span> {{ text }}</span>
+  </div>
 </template>
 
 <script>
 export default {
+  // type => declare which class should the badge take
   props: ['type', 'title'],
   computed: {
     text() {
       return this.title.toUpperCase();
-    }
-  }
-}
+    },
+  },
+};
 </script>
-
 <style scoped>
 .badge {
   background-color: #ccc;

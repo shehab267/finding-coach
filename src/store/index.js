@@ -13,7 +13,10 @@ const store = createStore({
       userId: 'c3',
     };
   },
+  // mutations: {},
+  // actions: {},
   getters: {
+    //  Make ID hard code for now till fetch with cloud
     userId(state) {
       return state.userId;
     },

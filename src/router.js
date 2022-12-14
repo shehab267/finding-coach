@@ -1,10 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
-import CoachDetail from './pages/coaches/CoachDetails.vue';
 import CoachesList from './pages/coaches/CoachesList.vue';
-import CoachRegistation from './pages/coaches/CoachRegistration.vue';
-import ContactCoach from './pages/requests/ContactCoach.vue';
-import RequestsReceived from './pages/requests/RequestsReceived.vue';
+import CoachesDetails from './pages/coaches/CoachDetails.vue';
+import ContactForm from './pages/requests/ContactForm.vue';
+import CoachRegistration from './pages/coaches/CoachRegistration.vue';
+import RequestsList from './pages/requests/RequestsList.vue';
 import NotFound from './pages/NotFound.vue';
 
 const router = createRouter({
@@ -14,14 +14,14 @@ const router = createRouter({
     { path: '/coaches', component: CoachesList },
     {
       path: '/coaches/:id',
-      component: CoachDetail,
+      component: CoachesDetails,
       props: true,
       children: [
-        { path: 'contact', component: ContactCoach }, // /coaches/c1/contact
+        { path: 'contact', component: ContactForm }, // /coaches/a1/contact "Contact with a specific coach"
       ],
     },
-    { path: '/register', component: CoachRegistation },
-    { path: '/requests', component: RequestsReceived },
+    { path: '/register', component: CoachRegistration },
+    { path: '/request', component: RequestsList },
     { path: '/:notFound(.*)', component: NotFound },
   ],
 });

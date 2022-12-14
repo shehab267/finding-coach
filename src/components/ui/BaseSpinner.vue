@@ -34,7 +34,7 @@
 }
 .lds-spinner div {
   transform-origin: 40px 40px;
-  animation: lds-spinner 1.2s linear infinite;
+  animation: lds-spinner 0.9s linear infinite;
 }
 .lds-spinner div:after {
   content: ' ';
@@ -49,47 +49,47 @@
 }
 .lds-spinner div:nth-child(1) {
   transform: rotate(0deg);
-  animation-delay: -1.1s;
+  animation-delay: -0.88s;
 }
 .lds-spinner div:nth-child(2) {
   transform: rotate(30deg);
-  animation-delay: -1s;
+  animation-delay: -0.8s;
 }
 .lds-spinner div:nth-child(3) {
   transform: rotate(60deg);
-  animation-delay: -0.9s;
+  animation-delay: -0.72s;
 }
 .lds-spinner div:nth-child(4) {
   transform: rotate(90deg);
-  animation-delay: -0.8s;
+  animation-delay: -0.64s;
 }
 .lds-spinner div:nth-child(5) {
   transform: rotate(120deg);
-  animation-delay: -0.7s;
+  animation-delay: -0.56s;
 }
 .lds-spinner div:nth-child(6) {
   transform: rotate(150deg);
-  animation-delay: -0.6s;
+  animation-delay: -0.48s;
 }
 .lds-spinner div:nth-child(7) {
   transform: rotate(180deg);
-  animation-delay: -0.5s;
+  animation-delay: -0.4s;
 }
 .lds-spinner div:nth-child(8) {
   transform: rotate(210deg);
-  animation-delay: -0.4s;
+  animation-delay: -0.32s;
 }
 .lds-spinner div:nth-child(9) {
   transform: rotate(240deg);
-  animation-delay: -0.3s;
+  animation-delay: -0.24s;
 }
 .lds-spinner div:nth-child(10) {
   transform: rotate(270deg);
-  animation-delay: -0.2s;
+  animation-delay: -0.16s;
 }
 .lds-spinner div:nth-child(11) {
   transform: rotate(300deg);
-  animation-delay: -0.1s;
+  animation-delay: -0.08s;
 }
 .lds-spinner div:nth-child(12) {
   transform: rotate(330deg);

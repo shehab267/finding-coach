@@ -34,20 +34,18 @@ export default {
       //  This is a weak  validation, but it does the work for now
       if (
         this.email === '' ||
-        // !this.email.includes('@') ||
-        !this.email === /^\w+((\.|-)?\w+)*@\w+((\.|-)?\w+)*(\.\w{2,9})+$/gi ||
+        !this.email.includes('@') ||
         this.message === ''
       ) {
         this.formIsValid = false;
         return;
       }
-      //  User Vuex to store the message
+      //  User Vuex to store the messa
       this.$store.dispatch('requests/contactCoach', {
         coachId: this.$route.params.id,
         email: this.email,
         message: this.message,
       });
-
       this.$router.replace('/coaches');
     },
   },
@@ -61,14 +59,17 @@ form {
   border-radius: 12px;
   padding: 1rem;
 }
+
 .form-control {
   margin: 0.5rem 0;
 }
+
 label {
   font-weight: bold;
   margin-bottom: 0.5rem;
   display: block;
 }
+
 input,
 textarea {
   display: block;
@@ -77,16 +78,19 @@ textarea {
   border: 1px solid #ccc;
   padding: 0.15rem;
 }
+
 input:focus,
 textarea:focus {
   border-color: #3d008d;
   background-color: #faf6ff;
   outline: none;
 }
+
 .errors {
   font-weight: bold;
   color: red;
 }
+
 .actions {
   text-align: center;
 }

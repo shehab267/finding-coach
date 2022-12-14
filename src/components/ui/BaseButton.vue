@@ -10,25 +10,28 @@
 <script>
 export default {
   props: {
+    // mode prop used to bind class, so I can pass any class I want
     mode: {
       type: String,
-      required: false,
-      default: null
+      requiered: false,
+      default: null,
     },
+    // pass 'link' to render Targeted elment "RouterLink" at the template
     link: {
       type: Boolean,
-      required: false,
-      default: false
+      requiered: false,
+      default: false,
     },
+    // :bind to prop useful to render RouterLink to my own 'to'
+    // * !Important for 'router-link' in other components
     to: {
       type: String,
-      required: false,
-      default: '/'
-    }
-  }
-}
+      requiered: false,
+      default: '/',
+    },
+  },
+};
 </script>
-
 <style scoped>
 button,
 a {
