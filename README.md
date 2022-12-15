@@ -43,3 +43,14 @@ _-_ email with a powerfull regex
 _-_ fetching data on fire base (Coaches, requests)
 
 _-_ auto refresh every min || Clicking refresh button
+
+
+## Acknowledgement
+
+- [Vue - The Complete Guide](https://www.udemy.com/course/vuejs-2-the-complete-guide/ "Vue - The Complete Guide by Maximilian Schwarzmüller").
+- [Vue.js](https://vuejs.org/ "vuejs.org")
+- [Stack Overflow](https://stackoverflow.com/ "Stack Overflow")
+
+### License & Copyright
+
+© Shehab Alhawary
