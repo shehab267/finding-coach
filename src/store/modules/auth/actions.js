@@ -15,9 +15,13 @@ export default {
     const responseData = await response.json();
     if (!response.ok) {
       console.log(responseData);
-      const error = new Error(response.message || 'Faild to authenticate!');
+      // const error = new Error(response.message || 'Faild to authenticate!');
+            const error = new Error(
+              `Faild to authenticate, ${responseData.error.message.toLowerCase()}!`
+            );
       throw error;
     }
+    console.log(responseData);
     // Commit the response at mutations and pass appropriate payload obj
     context.commit('setUser', {
       token: responseData.idToken,
