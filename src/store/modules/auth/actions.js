@@ -55,6 +55,10 @@ export default {
       throw error;
     }
 
+    // Save the data in local storage for auto login
+    localStorage.setItem('token', responseData.idToken);
+    localStorage.setItem('userId', responseData.localId);
+
     // Commit the response at mutations and pass appropriate payload obj
     context.commit('setUser', {
       token: responseData.idToken,
@@ -62,7 +66,19 @@ export default {
       tokenExpiration: responseData.expiresIn,
     });
   },
+  // Auto login 'triggered in the app.vue' start creating the application
+  tryLogin(context) {
+    const token = localStorage.token;
+    const userId = localStorage.userId;
 
+    if (token && userId) {
+      context.commit('setUser', {
+        token: token,
+        userId,
+        tokenExpiration: null,
+      });
+    }
+  },
   logout(context) {
     context.commit('setUser', {
       token: null,
