@@ -12,9 +12,11 @@ export default {
       hourlyRate: data.rate,
     };
 
+    const token = context.rootGetters.token;
+
     // Fetch data with Vuex using 'fireBase'
     const response = await fetch(
-      `https://vue-demo-coaching-default-rtdb.firebaseio.com/coaches/${userId}.json`,
+      `https://vue-demo-coaching-default-rtdb.firebaseio.com/coaches/${userId}.json?auth=${token}`,
       {
         // 'PUT' request => overWritten data if existed, or created if not
         method: 'PUT',

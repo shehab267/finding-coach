@@ -1,18 +1,20 @@
 <template>
-  <!-- error -> String, convert to Boolean with '!' return true | false  -->
-  <base-dialog :show="!!error" title="Uploading Error" @close="handelError">
-    <p>{{ error }}</p></base-dialog
-  >
+  <div>
+    <!-- error -> String, convert to Boolean with '!' return true | false  -->
+    <base-dialog :show="!!error" title="Uploading Error" @close="handelError">
+      <p>{{ error }}</p></base-dialog
+    >
 
-  <section>
-    <base-card>
-      <h2>Register as a coach now!</h2>
-      <div v-if="isLoading">
-        <base-spinner></base-spinner>
-      </div>
-      <coach-form @save-data="saveData"></coach-form>
-    </base-card>
-  </section>
+    <section>
+      <base-card>
+        <h2>Register as a coach now!</h2>
+        <div v-if="isLoading">
+          <base-spinner></base-spinner>
+        </div>
+        <coach-form @save-data="saveData"></coach-form>
+      </base-card>
+    </section>
+  </div>
 </template>
 
 <script>

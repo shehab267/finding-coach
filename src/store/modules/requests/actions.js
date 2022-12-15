@@ -31,11 +31,13 @@ export default {
   },
 
   async fetchRequests(context) {
+    const token = context.rootGetters.token;
+
     // Load Requests for ONLY currently active users
     // Getting UserId from our global state -> getters
     const coachId = context.rootGetters.userId;
     const response = await fetch(
-      `https://vue-demo-coaching-default-rtdb.firebaseio.com/requests/${coachId}.json`
+      `https://vue-demo-coaching-default-rtdb.firebaseio.com/requests/${coachId}.json?auth=${token}`
     );
 
     const responseData = await response.json();
