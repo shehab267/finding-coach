@@ -59,7 +59,6 @@ export default {
     localStorage.setItem('token', responseData.idToken);
     localStorage.setItem('userId', responseData.localId);
 
-    // Commit the response at mutations and pass appropriate payload obj
     context.commit('setUser', {
       token: responseData.idToken,
       userId: responseData.localId,

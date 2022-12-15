@@ -5,7 +5,6 @@ export default {
       message: payload.message,
     };
 
-    // Post requests on dataBase based on the CoachId
     const response = await fetch(
       `https://vue-demo-coaching-default-rtdb.firebaseio.com/requests/${payload.coachId}.json`,
       {
@@ -13,7 +12,6 @@ export default {
         body: JSON.stringify(newRequest),
       }
     );
-    // Next data needed for extracting and using the generating ID from fireBase with POST new request
     const responseData = await response.json();
 
     // convert the fireBase's id to name

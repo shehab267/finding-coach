@@ -2,8 +2,7 @@ export default {
   async registerCoach(context, data) {
     // Transforming the incomming data to proper Data
 
-    // id is temporary till fetching data to the cloud
-    const userId = context.rootGetters.userId; // defined in a seprate const to use it for now till authentication as a coach
+    const userId = context.rootGetters.userId;
     const coachData = {
       firstName: data.first,
       lastName: data.last,
@@ -50,14 +49,12 @@ export default {
       return;
     }
 
-    //  Fetching all coaches from Database
     const response = await fetch(
       `https://vue-demo-coaching-default-rtdb.firebaseio.com/coaches.json`
     );
     const responseData = await response.json();
     // Catching Errors
     if (!response.ok) {
-      // Throw error
       const error = new Error(responseData.message || 'Faild to fetch!');
       throw error;
     }
