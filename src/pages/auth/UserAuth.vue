@@ -89,6 +89,11 @@ export default {
           //  and pass the email and password as expicted from the payload
           await this.$store.dispatch('signup', actionPayload);
         }
+
+        // Redirect after logedIn or SignUp
+        // - redirect to Register as a Coach from "query URL ?" || coaches page
+        const redirectUrl = '/' + (this.$route.query.redirect || 'coaches');
+        this.$router.replace(redirectUrl);
       } catch (error) {
         this.error = error.message || 'Faild to authenticate!, try again';
       }
