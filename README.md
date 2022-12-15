@@ -53,4 +53,4 @@ _-_ auto refresh every min || Clicking refresh button
 
 ### License & Copyright
 
-© Shehab Alhawary
+CopyRight© Shehab Alhawary
