@@ -1,3 +1,6 @@
+import router from '../../../router';
+
+let timer;
 export default {
   async login(context, payload) {
     return context.dispatch('auth', {
@@ -55,34 +58,57 @@ export default {
       throw error;
     }
 
+    // Receiving and convertting to a num 'expiresIn' from token with dafault value '3600' sec
+    const expiresIn = +responseData.expiresIn * 1000;
+    const expirationDate = new Date().getTime() + expiresIn;
+
     // Save the data in local storage for auto login
     localStorage.setItem('token', responseData.idToken);
     localStorage.setItem('userId', responseData.localId);
+    localStorage.setItem('tokenExpiration', expirationDate);
+
+    timer = setTimeout(() => {
+      context.dispatch('logout');
+    }, expiresIn);
 
     context.commit('setUser', {
       token: responseData.idToken,
       userId: responseData.localId,
-      tokenExpiration: responseData.expiresIn,
     });
   },
   // Auto login 'triggered in the app.vue' start creating the application
   tryLogin(context) {
     const token = localStorage.token;
     const userId = localStorage.userId;
+    const tokenExpiration = localStorage.getItem('tokenExpiration');
+
+    const expiresIn = +tokenExpiration - new Date().getTime();
+    if (expiresIn < 1) {
+      return;
+    }
+
+    timer = setTimeout(() => {
+      context.dispatch('logout');
+    }, expiresIn);
 
     if (token && userId) {
       context.commit('setUser', {
         token: token,
         userId,
-        tokenExpiration: null,
       });
     }
   },
   logout(context) {
+    localStorage.removeItem('token');
+    localStorage.removeItem('userId');
+    localStorage.removeItem('tokenExpiration');
+
+    router.replace('/coaches');
+    clearTimeout(timer);
+
     context.commit('setUser', {
       token: null,
       userId: null,
-      tokenExpiration: null,
     });
   },
 };
