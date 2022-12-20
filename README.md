@@ -1,8 +1,6 @@
-# Finding Coach
+# Web Coding Coach "WCC"
 
-_My first Vue Project_
-
-this a web app for connectting clients to coaches
+Web Coding Coach "WCC" is a coach that goes everywhere with you, helping you to achieve any goal. We believe mentorship should be accessible to all, so with Web Coding Coach you can get expert level instruction and advice from senior coaches for an affortable price.
 
 ### start the project
 
@@ -44,6 +42,13 @@ _-_ fetching data on fire base (Coaches, requests)
 
 _-_ auto refresh every min || Clicking refresh button
 
+##  Contributing🤝
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the issues page.
+
+## Show your support
+Kindly give a ♥️ if you like this.
 
 ## Acknowledgement
 
