@@ -4,7 +4,7 @@ Web Coding Coach "WCC" is a coach that goes everywhere with you, helping you to 
 
 ## Introduction
 
-this is a Vue SPA 'single page application' for connecting mentors with mentees where they can sign up, log In, and connecting each other by sending requests.
+This is a Vue SPA 'single page application' for connecting mentors with mentees where they can sign up, log In, and connecting each other by sending requests.
 
 ## Technologies
 
