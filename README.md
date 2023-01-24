@@ -1,6 +1,6 @@
 # Web Coding Coach "WCC"
 
-Web Coding Coach "WCC" is a coach that goes everywhere with you, helping you to achieve any goal. We believe mentorship should be accessible to all, so with 'Web Coding Coach' you can get expert level instruction and advice from senior coaches for an affortable price.
+Web Coding Coach "WCC" is a coach that goes everywhere with you, helping you to achieve any goal. We believe mentorship should be accessible to all, so with 'Web Coding Coach' you can get expert level instruction and advice from senior coaches for an affordable price.
 
 ## Introduction
 
